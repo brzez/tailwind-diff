@@ -27,8 +27,8 @@
         const removedClass = 'bg-red-50 text-red-500'
 
         const createData = () => ({
-            a: '',
-            b: '',
+            a: 'bg-red-500 dark:bg-slate-900 relative pointer-events-auto',
+            b: 'bg-green-500 dark:bg-slate-900 absolute',
             output: [],
             update () {
                 const parse = t => {
@@ -60,7 +60,7 @@
                 const result = diff(this.a, this.b);
                 console.log(result)
 
-                this.output = result
+                this.output = result.sort((a, b) => a[1].localeCompare(b[1]))
             }
         })
     </script>
